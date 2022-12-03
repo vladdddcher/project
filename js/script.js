@@ -1,13 +1,50 @@
 
-console.log('gi')
-
-let incr = 10,
-    decr = 10
-    
-incr++
-decr--
 
 
-// ++incr префикстная операция
-// incr++ постфикстная операция
+
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '')
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+}
+
+// personalMovieDB[1] = '2'
+
+const a = prompt('Один из просмотренных фильмов?', ''),
+      b = prompt('На сколько оцените его?', '')
+      c = prompt('Один из просмотренных фильмов?', ''),
+      d = prompt('На сколько оцените его?', '')
+
+personalMovieDB.movies[a] = b
+personalMovieDB.movies[c] = d
+
+
+console.log(personalMovieDB)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
