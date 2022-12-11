@@ -749,23 +749,75 @@
 
 
 
-const script = document.createElement('script');
-
-script.src = 'js/test.js';
-document.body.append(script)
 
 
+// function loadScript(src) {
+//     const script = document.createElement('script');
+//     script.src = src;
+//     script.async = 'false';
+//     document.body.append(script);
+// }
 
-
-
-
-
-
-
+// loadScript('js/test.js')
+// loadScript('js/some.js')
 
 
 
 
+// ....................-----------=========================================
+
+// ====---урок 37
+
+// const btns = document.querySelectorAll('button'),
+//       wrapper = document.querySelector('#first')
+
+// console.log(btns[0].classList.length)
+// console.log(btns[0].classList.item(0))
+// console.log(btns[0].classList.add('red', 'ichoClasss'))
+// console.log(btns[0].classList.remove('blue'))
+// console.log(btns[0].classList.toggle('blue'))
+
+// btns.forEach(() => {
+    
+// })
+
+
+// if (btns[1].classList.contains('red')) {
+//     console.log('есть красный класс')
+// }
+
+// btns[0].addEventListener('click', () => {
+//     if (!btns[1].classList.contains('red')) {
+        
+//         btns[1].classList.add('red')
+//     } else {
+//         btns[1].classList.remove('red') 
+//     }
+// btns[1].classList.toggle('red')
+// })
+
+// wrapper.addEventListener('click', (event) => {
+//     if (event.target && event.target.classList.contains('lol')) {
+//         btns[1].classList.toggle('boom')
+//     }
+// })
+
+// wrapper.addEventListener('click', (event) => {
+//     if (event.target && event.target.tagName == 'BUTTON') {
+//         console.log('hi')
+//     }
+// })
+
+
+// btns.forEach((btn) => {
+//     btn.addEventListener('click', () => {
+//         console.log('wow')
+//     })
+// })
+
+// const btn = document.createElement('button');
+// btn.classList.add('red')
+// wrapper.append(btn)
 
 
 
@@ -773,38 +825,51 @@ document.body.append(script)
 
 
 
+// ====---урок 39
+
+
+// const timerId = setTimeout(function() {
+//     console.log('hi')
+// }, 5000)
+
+// const timerId = setTimeout(function(text) {
+//     console.log(text)
+// }, 5000, 'hi')
+
+
+// function logger () {
+//     console.log('hi')
+// }
+
+// const timerId = setTimeout(logger, 3000)
+
+// clearInterval(timerId)
 
 
 
+const btn = document.querySelector('.btn');
+let timerId;
+let i = 0;
 
+function myAnimation() {
+    
+    const elem = document.querySelector('.box')
+    let pos = 0;
+    
+    const id = setInterval(frame, 10)
+    
+    function frame() {
+        if(pos == 300) {
+            clearInterval(id)
+        } else {
+            pos++
+            elem.style.top = pos + 'px'
+            elem.style.left = pos + 'px'
+        }
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+btn.addEventListener('click', myAnimation)
 
 
 
