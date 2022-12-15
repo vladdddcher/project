@@ -847,108 +847,236 @@
 
 
 
-const btn = document.querySelector('.btn');
-let timerId;
-let i = 0;
+// const btn = document.querySelector('.btn');
+// let timerId;
+// let i = 0;
 
-function myAnimation() {
+// function myAnimation() {
     
-    const elem = document.querySelector('.box')
-    let pos = 0;
+//     const elem = document.querySelector('.box')
+//     let pos = 0;
     
-    const id = setInterval(frame, 10)
+//     const id = setInterval(frame, 10)
     
-    function frame() {
-        if(pos == 300) {
-            clearInterval(id)
-        } else {
-            pos++
-            elem.style.top = pos + 'px'
-            elem.style.left = pos + 'px'
-        }
-    }
-}
+//     function frame() {
+//         if(pos == 300) {
+//             clearInterval(id)
+//         } else {
+//             pos++
+//             elem.style.top = pos + 'px'
+//             elem.style.left = pos + 'px'
+//         }
+//     }
+// }
 
-btn.addEventListener('click', myAnimation)
+// btn.addEventListener('click', myAnimation)
 
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 40
 
 
 
+// const now = new Date()
 
 
+// let start = new Date();
 
+// for (let i = 0; i < 100000; i++) {
+//     let some = i ** 3;
+// }
 
+// let end = new Date();
 
 
+// alert(`Цикл отработал за ${end - start} милисекунд`)
 
 
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 42
 
 
+// const box = document.querySelector('.box');
+// const btn = document.querySelector('.bbbn')
+// // const width = box.clientWidth;
+// // const height = box.clientHeight;
+// const width = box.offsetWidth;
+// const height = box.offsetHeight;
 
+// console.log(width, height)
 
 
+// btn.addEventListener('click', () => {
+//     // box.style.height = box.scrollHeight + 'px'
+//     // box.classList.add('pops42--active')
+//     // box.style.height = 'auto'
+//     console.log(box.scrollTop)
+// })
 
 
+// console.log(box.getBoundingClientRect().top)
 
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 45
 
 
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hi = function() {
+//         console.log(`hi ${this.name}`)
+//     }
+// }
 
 
+// const ivan = new User('Ivan', 28)
+// const alex = new User('Lexa', 20)
 
+// ivan.hi()
+// alex.hi()
 
+// console.log(ivan)
+// console.log(alex)
 
 
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 46
 
 
+// function showThis(a, b) {
+//     console.log(this);
+//     function sum() {
+//         console.log(this)
+//         return this.a + this.b
+//     }
+//     console.log(sum())
+// }
 
+// showThis(4, 5)
 
+// Обычная фунция: this = window, но если стоит 'use strict' то будет undefined
 
 
+// const btn = document.querySelector('button')
 
+// btn.addEventListener('click', function() {
+//     // console.log(this)
+//     this.style.backgroundColor = 'red'
+//     if(this.style.backgroundColor === 'red') {
+//         this.style.backgroundColor = 'black'
+//     } else if(this.style.backgroundColor === 'black') {
+//         this.style.backgroundColor = 'blue'
+//     }
+// })
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 47
 
 
+// class Rectangle {
+//     constructor(height, width) {
+//         this.height = height
+//         this.width = width
+//     }
+    
+//     calcArea() {
+//         return this.height * this.width
+//     }
+    
+// }
 
+// const square = new Rectangle(11, 44)
 
 
+// console.log(square.calcArea())
 
 
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 52 AJAX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+// 52-01 - сиарая версия! неиспользуется но встречается
 
 
+// const inputRub = document.querySelector('#rub');
+// const inputUsd = document.querySelector('#usd');
 
+// inputRub.addEventListener('input', () => {
+//     const request = new XMLHttpRequest();
+    
+//  // request.open(method, url, async, login, pass); пример что заполняет
+//     request.open('GET', 'js/current.json');
+//     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//     request.send();
+    
+//     request.addEventListener('load', () => {
+//         if (request.status === 200) {
+//             console.log(request.response);
+//             const data = JSON.parse(request.response);
+//             inputUsd.value =  (+inputRub.value / data.current.usd).toFixed(2);
+//         } else {
+//              inputUsd.value = 'что то пошло не так, уходи!'
+//         }
+//     });
+    
+    
+// })
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 52
 
+// ....................-----------========================================= анимация при закрытии и открытии блока
+// const btn = document.querySelector('.test__box-btn');
+// const box = document.querySelector('.test__box-el')
 
+// btn.addEventListener('click', () => {
+//     showBox()
+//     hiddenBox()
+// })
 
+// function showBox() {
+//     if (!box.classList.contains('test__box-el-anim') && !box.classList.contains('test__box-el--act')) {
+//         box.classList.add('test__box-el-anim')
+//         setTimeout(() => {
+//             box.classList.add('test__box-el--act');
+//         }, 300)
+//     }    
+// }
 
+// function hiddenBox() {
+//     if (box.classList.contains('test__box-el-anim') && box.classList.contains('test__box-el--act')) {
+//         box.classList.remove('test__box-el--act');
+//         setTimeout(() => {
+//             box.classList.remove('test__box-el-anim')
+//         }, 300)
+//     }
+// }
 
 
 
@@ -956,82 +1084,101 @@ btn.addEventListener('click', myAnimation)
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 57
 
 
 
+// const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemart']
 
+// const shortNames = names.filter(name => {
+//     return name.length < 5;
+// });
 
 
+// console.log(shortNames)
 
 
 
 
+// const answers = ['IvAn', 'Ann', 'KsenIa', 'VoldEmMrt'];
 
+// const res = answers.map(item => item.toLocaleLowerCase())
 
+// const some = [4, 'qwe', 'qefsdgbaetbn']
 
+// console.log(some.every(item => typeof(item) === 'number'))
 
 
+// const arr = [1, 14, 22, 33, 11]
 
+// //                        =0   каждый элемент
+// const result = arr.reduce((sum, current) => {
+//     return sum + current
+// })
 
+// console.log(result)
 
 
 
 
 
+// ....................-----------=========================================
 
+// ====---урок 64 сохраняем данные после перезагрузки
 
 
+// localStorage.setItem('number', 5)
+// localStorage.getItem('number')
+// localStorage.removeItem('number')
+// localStorage.clear()
 
+// const checkbox = document.querySelector('#checkbox');
+// const form = document.querySelector('form');
+// const change = document.querySelector('#color');
 
+// if (localStorage.getItem('isChecked')) {
+//     checkbox.checked = true
+// }
 
+// if(localStorage.getItem('bg') === 'changed') {
+//     form.style.backgroundColor = 'red'
+// }
 
+// checkbox.addEventListener('change', () => {
+//     localStorage.setItem('isChecked', true) 
+// });
 
 
+// change.addEventListener('click', () => {
+//     if(localStorage.getItem('bg') === 'changed') {
+//         localStorage.removeItem('bg')
+//         form.style.backgroundColor = '#fff'
+//     } else {
+//         localStorage.setItem('bg', 'changed');
+//         form.style.backgroundColor = 'red'
+//     }
+// });
 
 
 
+// const persone = {
+//     name: 'Alex',
+//     age: 25
+// }
 
+// const serializedPesone = JSON.stringify(persone);
 
+// localStorage.setItem('alex', serializedPesone);
 
+// console.log(JSON.parse(localStorage.getItem('alex')))
 
 
 
+// ....................-----------=========================================
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ====---урок 65
 
 
 
